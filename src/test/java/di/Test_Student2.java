@@ -6,16 +6,27 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test_Student2 {
     @Test
-    public void test()
-    {
-        ClassPathXmlApplicationContext ctx= new ClassPathXmlApplicationContext("beans-config.xml");
-        Student s1=(Student)ctx.getBean("s1");
+    public void test() {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-config.xml");
+        Student s1 = (Student)ctx.getBean("s1");
         System.out.println(s1);
-        /*Student s2=ctx.getBean(Student.class);//第二種寫法,無須轉型,前提是只有一個bean
-        System.out.println(s2);*/
-        Student s2=ctx.getBean("s2",Student.class);//需要告訴她是哪一個Student=>"s2"
+        Student s2 = ctx.getBean("s2", Student.class);
         System.out.println(s2);
+        Student s3 = ctx.getBean("s3", Student.class);
+        System.out.println(s3);
+        Student s4 = ctx.getBean("s4", Student.class);
+        System.out.println(s4);
+        Student s5 = ctx.getBean("s5", Student.class);
+        System.out.println(s5);
+        Student s6 = ctx.getBean("s6", Student.class);
+        System.out.println(s6);
+        Student s7 = ctx.getBean("s7", Student.class);
+        System.out.println(s7);
+        Student s8 = ctx.getBean("s8", Student.class);
+        System.out.println(s8);
+        Student s9 = ctx.getBean("s9", Student.class);
+        System.out.println(s9);
         
-        
+        ctx.close();
     }
 }
