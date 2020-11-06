@@ -1,12 +1,15 @@
 package com.mycompany.springbasic1102.di;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Teacher {
     private String name;
     private List<String> cls; // 班級
     private Set<Student> students;
+    private Map<String, Integer> subjects;
+    
     
     public Teacher() {
     }
@@ -39,9 +42,19 @@ public class Teacher {
         this.students = students;
     }
 
+    public Map<String, Integer> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Map<String, Integer> subjects) {
+        this.subjects = subjects;
+    }
+
     @Override
     public String toString() {
-        return "Teacher{" + "name=" + name + ", cls=" + cls + ", students=" + students + '}';
+        return "Teacher{" + "name=" + name + ", cls=" + cls + ", students=" + students + ", subjects=" + subjects + '}';
     }
+
+    
 
 }
