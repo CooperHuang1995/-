@@ -1,6 +1,7 @@
   
 package com.mycompany.springbasic1102.jdbc.tx.dao;
 
+import com.mycompany.springbasic1102.jdbc.tx.exception.InsufficientAmount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,7 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public void updateWallet(Integer wid, Integer money) {
+    public void updateWallet(Integer wid, Integer money) throws InsufficientAmount{
         // 先判斷 Wallet 的 money 是否足夠 ?
         String sql = "Select money From Wallet Where wid = ?";
         int walletMoney = jdbcTemplate.queryForObject(sql, Integer.class, wid);
