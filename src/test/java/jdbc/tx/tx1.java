@@ -1,12 +1,13 @@
 package jdbc.tx;
 
 import com.mycompany.springbasic1102.jdbc.tx.dao.BookDao;
+import com.mycompany.springbasic1102.jdbc.tx.exception.InsufficientAmount;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class tx1 {
     @Test
-    public void t1() {
+    public void t1() throws InsufficientAmount {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
         BookDao bookDao = ctx.getBean("bookDaoImpl", BookDao.class);
         System.out.println(bookDao);
